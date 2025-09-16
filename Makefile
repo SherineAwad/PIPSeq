@@ -34,7 +34,7 @@ zebrafish_ref: Danio_rerio.GRCz11.dna.primary_assembly.fa Danio_rerio.GRCz11.104
 	--output-path zebrafish_ref \
 	--threads 8
 
-pipseeker_output:
+pipseeker_output: 14161-TH-1_R2_merged.fastq.gz 14161-TH-2_R2_merged.fastq.gz
 	${pipseek}/pipseeker full \
 	--r1 14161-TH-1_R1_merged.fastq.gz 14161-TH-2_R1_merged.fastq.gz \
 	--r2 14161-TH-1_R2_merged.fastq.gz 14161-TH-2_R2_merged.fastq.gz \
