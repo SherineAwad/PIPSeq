@@ -9,6 +9,7 @@ pipseek= /nfs/turbo/umms-thahoang/sherine/tools/pipseeker-v3.3.0-linux
 	cat 14161-TH-1_S279_R1_001.fastq.gz 14161-TH-1_S394_R1_001.fastq.gz > 14161-TH-1_R1_merged.fastq.gz
 	cat 14161-TH-1_S279_R2_001.fastq.gz 14161-TH-1_S394_R2_001.fastq.gz > 14161-TH-1_R2_merged.fastq.gz
 
+
 	# TH-2
 14161-TH-2_R2_merged.fastq.gz:
 	cat 14161-TH-2_S280_R1_001.fastq.gz 14161-TH-2_S395_R1_001.fastq.gz > 14161-TH-2_R1_merged.fastq.gz
@@ -45,7 +46,7 @@ pipseeker_output: fastqs/14161-TH-1_R2_merged.fastq.gz fastqs/14161-TH-2_R2_merg
 	--fastq /nfs/turbo/umms-thahoang/sherine/pipseek/fastqs/. \
 	--star-index-path zebrafish_ref \
 	--output-path pipseeker_output \
-	--chemistry v3 \
+	--chemistry v4 \
 	--threads 16
 
 
