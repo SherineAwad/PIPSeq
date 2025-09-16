@@ -14,6 +14,10 @@ pipseek= /nfs/turbo/umms-thahoang/sherine/tools/pipseeker-v3.3.0-linux
 	cat 14161-TH-2_S280_R1_001.fastq.gz 14161-TH-2_S395_R1_001.fastq.gz > 14161-TH-2_R1_merged.fastq.gz
 	cat 14161-TH-2_S280_R2_001.fastq.gz 14161-TH-2_S395_R2_001.fastq.gz > 14161-TH-2_R2_merged.fastq.gz
 
+fastqs:
+	mkdir fastqs 
+	mv *merged.fastq.gz fastqs 
+
 ##Prepare Reference
 
 
@@ -34,12 +38,15 @@ zebrafish_ref: Danio_rerio.GRCz11.dna.primary_assembly.fa Danio_rerio.GRCz11.104
 	--output-path zebrafish_ref \
 	--threads 8
 
-pipseeker_output: 14161-TH-1_R2_merged.fastq.gz 14161-TH-2_R2_merged.fastq.gz
+
+
+pipseeker_output: fastqs/14161-TH-1_R2_merged.fastq.gz fastqs/14161-TH-2_R2_merged.fastq.gz
 	${pipseek}/pipseeker full \
-	--r1 14161-TH-1_R1_merged.fastq.gz 14161-TH-2_R1_merged.fastq.gz \
-	--r2 14161-TH-1_R2_merged.fastq.gz 14161-TH-2_R2_merged.fastq.gz \
-	--genome zebrafish_ref \
-	--outdir pipseeker_output
+	--fastq /nfs/turbo/umms-thahoang/sherine/pipseek/fastqs/. \
+	--star-index-path zebrafish_ref \
+	--output-path pipseeker_output \
+	--chemistry v3 \
+	--threads 16
 
 
 
