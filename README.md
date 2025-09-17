@@ -50,3 +50,9 @@
 | Number of chimeric reads                       | 0           |
 | % of chimeric reads                            | 0.00%       |
 
+
+
+
+# Pip Seeker QC report 
+
+[Download the QC report](pipseeker_output/report.html)
